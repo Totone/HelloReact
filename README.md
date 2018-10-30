@@ -21,6 +21,8 @@ Assimiler les notions propres à React à travers des exercices  d'application
         *Différence expression/instruction
         *Equivalents de if/else en JSX
         *Opérateurs ternaires
+        *Équivalents des boucles en JSX
+    
 
 ## Exercices 
 
