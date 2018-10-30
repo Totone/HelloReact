@@ -21,9 +21,10 @@ export default HallOfFame
 // == Internal helpers ==============================================
 
 export const FAKE_HOF = [
-  { id: 3, guesses: 18, date: '10/10/2017', player: 'Jane' },
-  { id: 2, guesses: 23, date: '11/10/2017', player: 'Kevin' },
-  { id: 1, guesses: 31, date: '06/10/2017', player: 'Louisa' },
-  { id: 0, guesses: 48, date: '14/10/2017', player: 'Marc' },
+  { id: 4, guesses: 28, date: '28/03/2019', player: 'Turfu' },
+  { id: 3, guesses: 40, date: '11/10/2018', player: 'Johnny' },
+  { id: 2, guesses: 20, date: '10/10/2018', player: 'Billy' },
+  { id: 1, guesses: 91, date: '06/10/2018', player: 'Perry' },
+  { id: 0, guesses: 38, date: '14/10/2018', player: 'Puppy' },
 ]
 
