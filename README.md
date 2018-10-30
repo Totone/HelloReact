@@ -16,6 +16,7 @@ Assimiler les notions propres à React à travers des exercices  d'application
     *Fonctions pures
     *ES2015
     *JSX
+    *Événements
 
 ## Exercices 
 
