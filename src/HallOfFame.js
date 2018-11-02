@@ -17,7 +17,7 @@ const HallOfFame = ({ entries }) => (
   </table>
 )
 
-HallOfFame.PropTypes = {
+HallOfFame.propTypes = {
   entries: PropTypes.arrayOf(                 // .arrayOf: entries est un array
     PropTypes.shape({                         // .shape: objet dont les clés sont connues
       date: PropTypes.string.isRequired,
