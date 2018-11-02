@@ -6,22 +6,28 @@ Projet réalisé dans le cadre du [cours Open Classroom sur React](https://openc
 ## Objectif
 Assimiler les notions propres à React à travers des exercices  d'application
 
-    *Architecture
-    *Syntaxe
-    *Fonctionnement
-    *etc...
+* Architecture
+* Syntaxe
+* Fonctionnement
+* etc...
+
 
 ## Concepts étudiés
 
-    *Fonctions pures
-    *ES2015
-    *JSX
-    *Événements
-    *Expressions JSX et conditions
-        *Différence expression/instruction
-        *Equivalents de if/else en JSX
-        *Opérateurs ternaires
-        *Équivalents des boucles en JSX
+* Fonctions pures
+* ES2015
+* JSX
+* Événements
+* Expressions JSX et conditions
+    * Différence expression/instruction
+    * Equivalents de if/else en JSX
+    * Opérateurs ternaires
+    * Équivalents des boucles en JSX
+* Props techniques
+    * key
+    * children
+    * dangerouslySetInnerHTML
+* Propriété .defaultProps
     
 
 ## Exercices 
