@@ -24,8 +24,9 @@ class App extends Component {
     return shuffle(result)
   }
 
-  handleCardClick(card) {
-    console.log(card, 'clicked')
+  // fonction fléchée pour garder le bind de this
+  handleCardClick = (card) => {
+    console.log('clicked on', card, this)
   }
 
   render() {

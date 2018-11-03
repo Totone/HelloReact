@@ -18,7 +18,7 @@ const HallOfFame = ({ entries }) => (
 )
 
 HallOfFame.propTypes = {
-  entries: PropTypes.arrayOf(                 // .arrayOf: entries est un array
+  entries: PropTypes.arrayOf(                 // .arrayOf: entries est un array d'objets
     PropTypes.shape({                         // .shape: objet dont les clés sont connues
       date: PropTypes.string.isRequired,
       guesses: PropTypes.number.isRequired,
