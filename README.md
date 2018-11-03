@@ -86,4 +86,5 @@ Assimiler les notions propres à React à travers des exercices  d'application
         `method = (args) => { ... }`  
     3. décorateur 'autobind'  
         `@autobind` avant la définition de la méthode
-* 
+* Propriété "state"  
+    État "local", accessible uniquement par son composant  
