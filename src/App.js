@@ -9,13 +9,14 @@ import GuessCount from './GuessCount'
 
 const SIDE = 6
 const SYMBOLS = '😀🎉💖🎩🐶🐱🦄🐬🌍🌛🌞💫🍎🍌🍓🍐🍟🍿'
+const VISUAL_PAUSE_MSECS = 750;
 
 class App extends Component {
   state = {
     cards: this.generateCards(),      // Liste des cartes
     currentPair: [],                  // Paire actuelle (0,1 ou 2 élements)
     guesses: 0,                       // Tentatives de la partie actuelle
-    matchedCardIndices: [],           // Liste des cartes visibles
+    matchedCardIndices: [],           // Liste des cartes visibles (paires trouvées)
   }
 
   generateCards() {
@@ -45,7 +46,7 @@ class App extends Component {
   getFeedbackForCard(index) {
     const { currentPair, matchedCardIndices } = this.state
 
-    //array.includes(x) renvoie true si x est dans array
+    // array.includes(x) renvoie true si x est dans array
     const indexMatched = matchedCardIndices.includes(index) //indexMatched vaut true si la carte est dans la liste des cartes visibles
   
     if (currentPair.length < 2) {
@@ -53,13 +54,33 @@ class App extends Component {
       // si la carte est dans idexMatched OU que c'est la carte cliquée, on l'affiche, sinon cachée
     }
   
-    //array.includes(x) renvoie true si x est dans array
+    // array.includes(x) renvoie true si x est dans array
     if (currentPair.includes(index)) { 
       return indexMatched ? 'justMatched' : 'justMismatched' 
       // si la carte fait partie de la currentPair, et de indexMatched, elle est 'justMatched' sinon 'justMisatched'
     }
   
     return indexMatched ? 'visible' : 'hidden'
+  }
+
+  // update du jeu 
+  handleNewPairClosedBy(index) {
+    const { cards, currentPair, guesses, matchedCardIndices} = this.state;
+
+    const newPair = [currentPair[0], index];                    // 
+    const newGuesses = guesses + 1;                             //
+    const matched = cards[newPair[0]] === cards[newPair[1]];    //
+    this.setState({currentPair: newPair, guesses: newGuesses}); //
+
+    if (matched) {
+      this.setState({matchedCardIndices: [...matchedCardIndices, ...newPair] });
+      /*
+        x: [...y, ...z] // Syntaxe: spread
+        étale le contenu des itérables y et z dans x
+        ici équivalent à : matchedCardIndices.concat(newPair) vu que matchedCardIndices et newPair sont deux arrays et que matchedCardIndices est la cible
+      */
+    }
+    setTimeout(() => this.setState({currentPair: []}), VISUAL_PAUSE_MSECS); // setState() avec un offset temporel pour avoir le temps de visualiser la paire cliquée avant d'actualiser
   }
 
   render() {
@@ -69,7 +90,7 @@ class App extends Component {
       <div className="memory">
         <GuessCount guesses={guesses} />
         
-        {cards.map((card, index) => (  //this.cards.map() fait l'équivalent d'un foreach  
+        {cards.map((card, index) => (  // this.cards.map() fait l'équivalent d'un foreach  
           <Card
             card={card}
             feedback={this.getFeedbackForCard(index)}

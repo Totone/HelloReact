@@ -88,3 +88,6 @@ Assimiler les notions propres à React à travers des exercices  d'application
         `@autobind` avant la définition de la méthode
 * Propriété "state"  
     État "local", accessible uniquement par son composant  
+* setUpdate()  
+    Met à jour le local state  
+    Attention: asynchrone (s'effectue pas immédiatement mais au moment opportun, souvent juste avant le render)  
