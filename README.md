@@ -93,4 +93,14 @@ Assimiler les notions propres à React à travers des exercices  d'application
     Attention: asynchrone (s'effectue pas immédiatement mais au moment opportun, souvent juste avant le render)  
 * Méthodes de cycle de vie  
     Méthodes au nom spécifique se déclenchant à des moments précis  
+    Pas besoin d'elles por notre petite appli  
     ![image](src/img/lifeCycleMethods.png)
+
+#### Formulaires
+
+* Simplification énorme des valeurs et événements  
+    value: pour mettre une valeur à N'IMPORTE QUELLE BALISE de form (et checked pour les buttons radio)
+    onChange pour détecter les changements en live  
+* Champs contrôlés  
+    Mettre des filtres ou des formatages sur des valeurs de champ  
+    Contrôler la saisie user et pouvoir y répondre en live   
