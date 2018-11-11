@@ -76,7 +76,7 @@ Assimiler les notions propres à React à travers des exercices  d'application
     `static defaultProps = {/* liste des props */}`  
     `static propTypes = {/* liste des props */}`  
 * Différence avec React.createClass /* /!\ méthode dépréciée */  
-    Avec React.createClass, binding de this automatique à l'instance du composant l'appelant (auto-bound)
+    Avec React.createClass, binding de `this` automatique à l'instance du composant l'appelant (auto-bound)
     Avec les classes ES2015, binding au choix (coût moindre en performances)
 * Binding de this  
     3 méthodes:  
@@ -86,21 +86,26 @@ Assimiler les notions propres à React à travers des exercices  d'application
         `method = (args) => { ... }`  
     3. décorateur 'autobind'  
         `@autobind` avant la définition de la méthode
-* Propriété "state"  
+* Propriété `state`  
     État "local", accessible uniquement par son composant  
-* setState()  
+* `setState()`  
     Met à jour le local state  
     Attention: asynchrone (s'effectue pas immédiatement mais au moment opportun, souvent juste avant le render)  
 * Méthodes de cycle de vie  
     Méthodes au nom spécifique se déclenchant à des moments précis  
-    Pas besoin d'elles por notre petite appli  
+    Pas besoin d'elles por notre petite app  
     ![image](src/img/lifeCycleMethods.png)
 
 #### Formulaires
 
 * Simplification énorme des valeurs et événements  
-    value: pour mettre une valeur à N'IMPORTE QUELLE BALISE de form (et checked pour les buttons radio)
-    onChange pour détecter les changements en live  
+    `value` pour mettre une valeur à N'IMPORTE QUELLE BALISE de form (et checked pour les buttons radio)
+    `onChange` pour détecter les changements en live  
 * Champs contrôlés  
-    Mettre des filtres ou des formatages sur des valeurs de champ  
-    Contrôler la saisie user et pouvoir y répondre en live   
+    Mettre des filtres ou des formatages sur des valeurs de champ (ex: numéro de téléphone ou de carte bancaire)  
+    Contrôler la saisie user et pouvoir y répondre en live  
+* Champs non contrôlés  
+    Pour récupérer une valeur sans besoin de contrainte  
+    Valeur par défaut: `defaultvalue` plutôt que `value` (et `defaultChecked` pour les buttons radio)  
+    Prop `ref` pour stocker dans `field` une valeur d'un champ non contrôlé  
+    `ref={(field) => {/* fonction stockant la valeur */}}`
